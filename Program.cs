@@ -25,10 +25,15 @@
                         break;
                     case "3":
                         return;
+                    case "4":
+                        SökProdukt();
+                        return;
+
                     default:
                         Console.WriteLine("Ogiltigt val. Försök igen.");
                         break;
                 }
+
             }
         }
         static void LäggTillProdukt()
@@ -39,5 +44,25 @@
         {
             // TODO: Implementera metod för att visa inventarie
         }
+       
+            
+            static void SökProdukt()
+            {
+                Console.Write("Skriv namnet på produkten du vill söka efter: ");
+                string sökProdukt = Console.ReadLine();
+
+                
+                if (inventory.Contains(sökProdukt))
+                {
+                    Console.WriteLine($"Produkten '{sökProdukt}' finns i listan.");
+                }
+                else
+                {
+                    Console.WriteLine($"Produkten '{sökProdukt}' hittades inte.");
+                }
+            }
+        }
     }
-}
+
+    
+
