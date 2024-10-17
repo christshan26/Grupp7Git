@@ -34,6 +34,8 @@
         static void LäggTillProdukt()
         {
             // TODO: Implementera metod för att lägga till produkt
+            Console.WriteLine("ange produktens namn");
+            string inventory = Console.ReadLine();
         }
         static void VisaInventarie()
         {
