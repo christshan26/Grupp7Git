@@ -48,6 +48,7 @@
             // TODO: Implementera metod för att visa inventarie
             foreach (string item in inventory)
             {
+                Console.WriteLine("Aktuellt inventarie: ");
                 Console.WriteLine($"\n{item}");
             }
         }
