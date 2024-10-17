@@ -1,9 +1,10 @@
-﻿namespace Grupp7Git
+﻿using System;
+
+using System.Collections.Generic;
+
+class Program
+  
 {
-    using System;
-    using System.Collections.Generic;
-    class Program
-    {
         static List<string> inventory = new List<string>();
         static void Main(string[] args)
         {
@@ -86,4 +87,3 @@
         }
     }
 }
-       
