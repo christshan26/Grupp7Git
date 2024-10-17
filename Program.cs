@@ -26,16 +26,11 @@
                         VisaInventarie();
                         break;
                     case "3":
-                        //TaBortProdukt();
+                        TaBortProdukt();
                         break;
-                    case "4":
-                        //SökProdukt();
-                        break;
-                    case "5":
-                        return;
                     case "4":
                         SökProdukt();
-                        return;
+                        break;
 
                     default:
                         Console.WriteLine("Ogiltigt val. Försök igen.");
@@ -59,25 +54,43 @@
                 Console.WriteLine($"\n{item}");
             }
         }
-       
-            
-            static void SökProdukt()
-            {
-                Console.Write("Skriv namnet på produkten du vill söka efter: ");
-                string sökProdukt = Console.ReadLine();
 
-                
-                if (inventory.Contains(sökProdukt))
-                {
-                    Console.WriteLine($"Produkten '{sökProdukt}' finns i listan.");
-                }
-                else
-                {
-                    Console.WriteLine($"Produkten '{sökProdukt}' hittades inte.");
-                }
+
+        
+        static void TaBortProdukt()
+        {
+            Console.WriteLine("Vilken produkt vill du ta bort?");
+            String? eraseProduct = Console.ReadLine();
+
+            if (inventory.Contains(eraseProduct))
+            {
+                inventory.Remove(eraseProduct);
+                Console.WriteLine($"{eraseProduct} har tagits bort");
+            }
+            else
+            {
+                Console.WriteLine($"{eraseProduct} finns inte i listan");
+            }
+
+        }
+        static void SökProdukt()
+        {
+            Console.Write("Skriv namnet på produkten du vill söka efter: ");
+            string sökProdukt = Console.ReadLine();
+
+
+            if (inventory.Contains(sökProdukt))
+            {
+                Console.WriteLine($"Produkten '{sökProdukt}' finns i listan.");
+            }
+            else
+            {
+                Console.WriteLine($"Produkten '{sökProdukt}' hittades inte.");
             }
         }
+
     }
+}
 
     
 
