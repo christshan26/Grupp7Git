@@ -26,10 +26,10 @@
                         VisaInventarie();
                         break;
                     case "3":
-                        //TaBortProdukt();
+                        TaBortProdukt();
                         break;
                     case "4":
-                        //SökProdukt();
+                        SökProdukt();
                         break;
                     case "5":
                         return;
@@ -39,18 +39,51 @@
                 }
             }
         }
-        static void LäggTillProdukt()
+        static void LäggTillProdukt()  // AZAT
         {
-            // TODO: Implementera metod för att lägga till produkt
+            Console.WriteLine("ange produktens namn");
+            string addedInventory = Console.ReadLine();  // Läser in produkten som användaren vill lägga till.
+            inventory.Add(addedInventory);  // Lägger till produkten i listan inventory.
         }
-        static void VisaInventarie()
+        static void VisaInventarie()  // CHRISTOFFER
         {
-            // TODO: Implementera metod för att visa inventarie
-            foreach (string item in inventory)
+            Console.WriteLine("Aktuellt inventarie: \n");
+            foreach (string item in inventory)  // Loopar igenom hela listan inventory.
             {
-                Console.WriteLine("Aktuellt inventarie: ");
-                Console.WriteLine($"\n{item}");
+                Console.WriteLine(item); // Skriver ut alla produkter som hittas i inventory.
+            }
+        }
+        static void TaBortProdukt()  // ALBIN
+        {
+            Console.WriteLine("Vilken produkt vill du ta bort?");
+            String? eraseProduct = Console.ReadLine(); // Läser in produkten som användaren vill ta bort.
+
+            if (inventory.Contains(eraseProduct))  // If-sats som kollar ifall produkten finns i listan.
+            {
+                inventory.Remove(eraseProduct);  // Tar bort produkten från listan.
+                Console.WriteLine($"{eraseProduct} har tagits bort");
+            }
+            else  // Else som körs ifall produkten inte hittas i listan.
+            {
+                Console.Write("Skriv namnet på produkten du vill söka efter: ");
+            }
+        }
+
+        static void SökProdukt()  // RASHIID
+        {
+            Console.Write("Skriv namnet på produkten du vill söka efter: ");
+            string sökProdukt = Console.ReadLine();  // Läser in produkten som användaren vill hitta.
+
+
+            if (inventory.Contains(sökProdukt)) // If-sats som kollar ifall produkten finns i listan.
+            {
+                Console.WriteLine($"Produkten '{sökProdukt}' finns i listan.");  //Skriver ut produkten.
+            }
+            else
+            {
+                Console.WriteLine($"Produkten '{sökProdukt}' hittades inte.");  // Else som körs ifall produkten inte hittas i listan.
             }
         }
     }
 }
+       
